@@ -1,1 +1,4 @@
 com\klapa\servlets\GetParameters.class
+com\klapa\model\Employee.class
+com\klapa\model\util\HibernateUtil.class
+com\klapa\model\Department.class
