@@ -9,7 +9,7 @@
         oracle.jdbc.OracleDriver</property>
     <property name="hibernate.connection.url">
         <!-- jdbc:Oracle:thin:@127.0.0.1:8090/slyvronline -->
-        jdbc:Oracle:thin:@127.0.0.1:1521:xe
+        jdbc:Oracle:thin:@127.0.0.1:1521:XE
         </property>
     <property name="hibernate.connection.username">
         first_app</property>

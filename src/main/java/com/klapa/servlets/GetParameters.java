@@ -11,6 +11,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.hibernate.Query;
+import org.hibernate.Session;
+
+import com.klapa.model.Department;
+import com.klapa.model.Employee;
+import com.klapa.model.util.HibernateUtil;
+
 /**
  * Servlet implementation class GetParameters
  */
@@ -42,7 +49,29 @@ public class GetParameters extends HttpServlet {
 	public void doPost(HttpServletRequest request,
 	        HttpServletResponse response)   throws ServletException, IOException {
 	    PrintWriter out = response.getWriter();
-	 
+	    out.println("oracle :");
+
+	    Session session = HibernateUtil.getSessionFactory().openSession();
+	    
+        session.beginTransaction();
+ 
+        Department department = new Department("java");
+        session.save(department);
+ 
+        session.save(new Employee("Jakab Gipsz",department));
+        session.save(new Employee("Captain Nemo",department));
+      
+        session.getTransaction().commit();
+ 
+        Query q = session.createQuery("From Employee ");
+                 
+        List<Employee> resultList = q.list();
+        out.println("num of employess:" + resultList.size());
+        for (Employee next : resultList) {
+            out.println("next employee: " + next);
+        }	    
+	    
+	    
 	    out.println("Wczytanie 3 parametrow z zadania :");
 	    out.println(request.getParameter("parametr1"));
 	    out.println(request.getParameter("parametr2"));
