@@ -3,27 +3,29 @@
 "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
- <session-factory>
-  
-<property name="hibernate.connection.driver_class">
-        oracle.jdbc.OracleDriver</property>
-    <property name="hibernate.connection.url">
-        <!-- jdbc:Oracle:thin:@127.0.0.1:8090/slyvronline -->
-        jdbc:Oracle:thin:@127.0.0.1:1521:XE
-        </property>
-    <property name="hibernate.connection.username">
-        first_app</property>
-    <property name="hibernate.connection.password">
-        Idziezima$321</property>
-    <property name="dialect">
-        org.hibernate.dialect.OracleDialect</property>
-    <!-- Other -->
-    <property name="show_sql">true</property>
-    <property name="hibernate.hbm2ddl.auto">validate</property>
- 
-     <mapping class="com.klapa.model.Employee" />
-     <mapping class="com.klapa.model.Department" />
- 
- <!-- <mapping resource="com/mkyong/user/DBUser.hbm.xml"></mapping> -->
-</session-factory>
+	<session-factory>
+
+		<property name="hibernate.connection.driver_class">
+			oracle.jdbc.OracleDriver</property>
+		<property name="hibernate.connection.url">
+			<!-- jdbc:Oracle:thin:@127.0.0.1:8090/slyvronline -->
+			jdbc:Oracle:thin:@127.0.0.1:1521:XE
+		</property>
+		<property name="hibernate.connection.username">
+			first_app</property>
+		<property name="hibernate.connection.password">
+			Idziezima$321</property>
+		<property name="dialect">
+			org.hibernate.dialect.OracleDialect</property>
+		<!-- Other -->
+		<property name="show_sql">true</property>
+		<property name="hibernate.hbm2ddl.auto">validate</property>
+		<property name="hibernate.hbm2ddl.auto">create</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		
+		<mapping class="com.klapa.model.Employee" />
+		<mapping class="com.klapa.model.Department" />
+
+		<!-- <mapping resource="com/mkyong/user/DBUser.hbm.xml"></mapping> -->
+	</session-factory>
 </hibernate-configuration>

@@ -11,8 +11,7 @@ public class Department {
  
     @Id
     @GeneratedValue
-    private Long id;
- 
+    private Long id; 
      
     private String name;
      
@@ -20,7 +19,7 @@ public class Department {
     private List<Employee> employees = new ArrayList<Employee>();
       
     public Department() {
-        super();
+
     }
     public Department(String name) {
         this.name = name;
